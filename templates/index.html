@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Weather app</title>
+{% endblock %}
+
+{% block body %}
+<div class="centered">
+    <div class="header">
+        <h1>{{location}}</h1>
+        <p>(Latitude: {{lat}}, Longitude: {{long}})</p>
+    </div>
+
+    <div class="flexbox">
+        <div class="flexitem">
+            <h2>Daily temperature</h2>
+            <img src="data:image/png;base64,{{daily_temp_plot}}"/>
+            <p>Maximum temperature: ???</p>
+            <p>Minimum temperature: ???</p>
+            <p>Average temperature: ???</p>
+        </div>
+        <div class="flexitem">
+            <h2>Weekly temperature</h2>
+            <img src="data:image/png;base64,{{weekly_temp_plot}}"/>
+            <p>Maximum temperature: ???</p>
+            <p>Minimum temperature: ???</p>
+            <p>Average temperature: ???</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer centered">
+    <p>This website is made possible by <a href="https://open-meteo.com/">https://open-meteo.com/</a></p>
+</div>
+
+{% endblock %}
